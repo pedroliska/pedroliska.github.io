@@ -3,9 +3,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Liska</title>
+    <meta name="color-scheme" content="light dark">
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #fff;
+            --text: #111;
+            --link: #000;
+            --link-hover: #888888;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #111;
+                --text: #eee;
+                --link: #fff;
+                --link-hover: #888888;
+            }
+        }
+
         body {
-            color: #111;
+            background-color: var(--background);
+            color: var(--text);
             font-family: monospace;
             margin: 10px;
             padding: 0;
@@ -23,14 +42,14 @@
         }
 
         a {
-            color: #000;
+            color: var(--link);
             text-decoration: underline;
             text-decoration-thickness: 1px;
             transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #888888;
+            color: var(--link-hover);
         }
     </style>
 </head>
